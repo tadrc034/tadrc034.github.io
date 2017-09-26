@@ -44,7 +44,7 @@ html, body{
     top:-40px;
     left:0px;
     animation-name: drive;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0,.77,1,.28);
@@ -52,7 +52,7 @@ html, body{
 
 .luigi{
     position: absolute;
-    top: 8px;
+    top: 100px;
     left: 0;
     animation-name: drive;
     animation-duration: 5s;
