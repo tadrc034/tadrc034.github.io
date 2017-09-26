@@ -21,7 +21,7 @@ html, body{
 
 .road{
     height: 30%;
-    background: grey;
+    background: #777;
     box-sizing: border-box;
     border-top: 10px solid grey;
     border-bottom: 10px solid grey;
