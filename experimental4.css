@@ -44,9 +44,10 @@ html, body{
     top:-40px;
     left:0px;
     animation-name: drive;
-    animation-duration: 4s;
+    animation-duration: 5s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0,.77,1,.28);
 }
 
 .luigi{
@@ -54,7 +55,7 @@ html, body{
     top: 8px;
     left: 0;
     animation-name: drive;
-    animation-duration: 4s;
+    animation-duration: 5s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-direction: forward;
