@@ -9,13 +9,13 @@ body{
     box-sizing: border-box;
 }
 .circle{
-    width: 100px;
-    padding: 50px 0;
+    width: 300px;
+    padding: 150px 0;
     line-height: 0;
-    margin: 60px auto;
+    margin: 100px auto;
     background: pink;
     color: white;
-    border-radius: 50px;
+    border-radius: 200px;
     cursor: pointer;
     transition: background 1s, transform 0.7s 0.7s ease;
     
@@ -26,15 +26,18 @@ body{
     transform: rotate(360deg);
     
 }
+.circle:active {
+    background: #c283c6;
+}
 
 .circle2{
-    width: 100px;
-    padding: 50px 0;
+    width: 300px;
+    padding: 150px 0;
     line-height: 0;
     margin: 60px auto;
     background: pink;
     color: white;
-    border-radius: 50px;
+    border-radius: 200px;
     cursor: pointer;
     transition: background 1s, transform 0.7s 0.7s ease;
 }
@@ -44,14 +47,18 @@ body{
     transform: rotate(360deg);
     
 }
+.circle2:active {
+    background: #299;
+}
+
 .circle3{
-    width: 100px;
-    padding: 50px 0;
+    width: 300px;
+    padding: 150px 0;
     line-height: 0;
     margin: 60px auto;
     background: pink;
     color: white;
-    border-radius: 50px;
+    border-radius: 200px;
     cursor: pointer;
     transition: background 1s, transform 0.7s 0.7s ease;
 }
@@ -60,4 +67,7 @@ body{
     background: salmon;
     transform: rotate(360deg);
     
+}
+.circle3:active {
+    background: #ffe896;
 }
