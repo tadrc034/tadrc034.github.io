@@ -6,8 +6,8 @@ body{
     height: 100%;
 }
 .trans{
-    height: 200px;
-    width: 200px;
+    height: 377px;
+    width: 659px;
     display: block;
     padding: 15px;
     margin: 100px auto;
@@ -15,10 +15,8 @@ body{
     transition: all 1s ease-in-out;
 }
 .trans:hover{
-/*transform:translate (200px,250px) ;*/
-/*transform: rotate(360deg);*/
-transform: resize (1.2)
+/*transform:translate (400px,699px) ;*/
+transform:scale (2);
 background: #1C00FF;
 transition: all 3s ease-in-out;
 }
-
