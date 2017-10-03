@@ -3,11 +3,11 @@ body{
 }
 .resp{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 .trans{
     height: 377px;
-    width: auto;
+    width: 659px;
     display: block;
     padding: 15px;
     margin: 100px auto;
