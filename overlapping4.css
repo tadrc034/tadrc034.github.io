@@ -7,6 +7,8 @@ body{
     width: 400px;
     background: #B4BBFF;
     position: absolute;
+    top: 20%;
+    left: 20%;
     transition:all 3s ease-in-out;
 }
 
