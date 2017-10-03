@@ -7,11 +7,15 @@ body{
     width: 400px;
     background: #B4BBFF;
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 15%;
+    left: 15%;
+
     transition:all 3s ease-in-out;
 }
 
 .trans:hover{
-    transform: scale(1.3);
+    transform: scale(1.6);
+}
+.trans:active{
+    background: salmon;
 }
