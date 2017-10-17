@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>changing style demo</title>
+  <style>
+  div {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: left;
+  }
+  .example1, .example2, .example3 {
+     width: 100%; 
+     margin-bottom: 40px;
+  } b  
+  .rounded {
+    border-radius: 60px;
+  }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+ 
+  <h3>Example 1</h3>
+  <div class="example1">
+    <span id="result">&nbsp;</span>
+    <div style="background-color:blue;"></div>
+    <div style="background-color:rgb(15,99,30);"></div>
+    <div style="background-color:#123456;"></div>
+    <div style="background-color:#f11;"></div>
+  </div>
+
+  <h3>Example 2</h3>
+  <div class="example2">
+    <div style="background-color:purple;"></div>
+  </div>
+   
+  <h3>Example 3</h3> 
+  <div class="example3">
+    <div style="background-color:orange;"></div>
+  </div>
+   
+  <script>
+  /* global $ */
+  
+  // Example one: get color of box on mouse click
+  $( ".example1 div" ).click(function() {
+    var color = $( this ).css( "background-color" );
+    $( "#result" ).html( "That div is <span style='color:" +
+      color + ";'>" + color + "</span>." );
+  });
+  
+  // Example two: set color of box to random on mouseover
+  $( ".example2 div" ).mouseover(function() {
+    $( this ).css( "background-color", getRandomColor());
+  });
+  
+  function getRandomColor () {
+    // this function returns a string with format "rgb(000,000,000)" where 000 is an integer between 0 and 255
+    var random0to255 = function() {
+      return Math.floor(Math.random()*255);
+    }
+    return "rgb(" + random0to255() + "," + random0to255() + "," + random0to255() + ")";
+  }
+  
+  // Example three: add/remove a class to change style of div
+  $( ".example3 div" ).mouseover(function() {
+    $( this ).toggleClass( "rounded" );
+  });
+  </script>
+   
+</body>
+</html>

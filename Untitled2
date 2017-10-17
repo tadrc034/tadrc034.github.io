@@ -1,0 +1,44 @@
+<html>
+    <head>
+       <title>Christina Tadros | Creative Computing</title> 
+       <link rel="stylesheet" href="trying.css">
+    </head>
+    
+    <body>
+        <header>
+            <nav>
+                <h1>christina tadros</h1>
+                <ul>
+                    <li><a href="tryin.html">HOME</a></li>
+                    <li><a href="#">ASSIGNEMNTS</a></li>
+                        <ul>
+                            <li><a href="#">Assignment 1</a></li>
+                            <li><a href="#">Assignment 2</a></li>
+                            <li><a href="#">Assignment 3</a></li>
+                        </ul>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                
+                    </ul>
+                    <li><a href="#">PORTFOLIO</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+         
+         
+                
+        
+        <img src="https://images.fineartamerica.com/images-medium-large-5/les-demoiselles-davignon-picasso-detail-ricardmn-photography.jpg" <allign="right" </allign><br>
+    
+    </body>
+</html>

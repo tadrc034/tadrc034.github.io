@@ -1,0 +1,70 @@
+<html>
+    <head>
+       <title>Christina Tadros | Creative Computing</title> 
+       <link rel="stylesheet" href="trying.css">
+    </head>
+    
+    <body>
+        <header>
+            <nav>
+                <h1>christina tadros</h1>
+                <ul>
+                    <li><a href="tryin.html">HOME</a></li>
+                    <li><a href="#">ASSIGNEMNTS</a></li>
+                                        <ul>
+                                            <li><a href="#">Assignment 1: HTML Introduction</a></li><br>
+                                            <ul>
+                                                <li><a href='page2.html'> Page 1</a></li><br>
+                                                <li><a href='page3.html'> Page 2</a></li><br>
+                                                <li><a href='animationtrial2.html'> Page 3</a></li><br>
+                                                <li><a href='page4.html'>Page 4</a></li><br>
+                                                <li><a href='page5.html'>Page 5</a></li><br>
+                                                <li><a href='page6.html'>Page 6</a></li><br>
+                                                <li><a href='page7.html'>Page 7</a></li><br>
+                                            </ul>
+                                            <li><a href="#">Assignment 2: CSS Introduction</a></li><br>
+                                                <ul>
+                                                        <li><a href='animationtrial2.html'>Animation 1</a></li><br>
+                                                        <li><a href='experimental.html'>Animation 2</a></li><br>
+                                                        <li><a href='experimental2.html'>Animation 3</a></li><br>
+                                                        <li><a href='experimental4.html'>Animation 4</a></li><br>
+                                                        <li><a href='experimental5.html'>Animation 5</a></li><br>
+                                                        <li><a href='experimental4.html'>Animation 6</a></li><br>
+                                                        <li><a href='experimental4.html'>Animation 7</a></li><br>
+                                                </ul>
+                                            <li><a href="#">Assignment 3: HTML & CSS Effects</a></li><br>
+                                                <ul>
+                                                         <li><a href='overlapping1.html'>Page 1</a></li><br>
+                                                         <li><a href='overlapping2.html'>Page 2</a></li><br>
+                                                         <li><a href='overlapping3.html'>Page 3</a></li><br>
+                                                         <li><a href='overlapping4.html'>Page 4</a></li><br>
+                                                         <li><a href='overlapping5.html'>Page 5</a></li><br>
+                                                         <li><a href='overlapping6.html'>Page 6</a></li><br>
+                                                        <li> <a href='overlapping7.html'>Page 7</a></li><br>
+                                                </ul>
+                                            <li><a href="#">Assignment 4: Java Script</a></li>
+                                            <ul>
+                                                        <li><a href='#.html'>Page 1</a></li><br>
+                                                        <li><a href='#.html'>Page 2</a></li><br>
+                                                       <li><a href='#.html'>Page 3</a></li><br>
+                                                        <li><a href='#.html'>Page 4</a></li><br>
+                                                        <li><a href='#.html'>Page 5</a></li><br>
+                                                        <li><a href='#.html'>Page 6</a></li><br>
+                                                        <li><a href='#.html'>Page 7</a></li><br>
+                                                
+                                            </ul>
+                    </ul>
+                    <li><a href="#">PORTFOLIO</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+         
+         
+                
+        
+        <img src="https://images.fineartamerica.com/images-medium-large-5/les-demoiselles-davignon-picasso-detail-ricardmn-photography.jpg" <allign="right" </allign><br>
+    
+    </body>
+</html>
