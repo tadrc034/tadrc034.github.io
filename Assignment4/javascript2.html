@@ -1,52 +1,64 @@
 <html>
 <head>
-  <title>changing style demo</title>
+  <title>jQuery Demo</title>
   <style>
   div {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
+    border-radius: 80px;
     margin: 5px;
     float: left;
   }
-  .example1, .example2, .example3 {
+  .example1, .example2, .example3, .example4 {
      width: 100%; 
      margin-bottom: 40px;
   } b  
   .rounded {
     border-radius: 60px;
   }
+  
+  body{
+    font-family: helvetica;
+    font-size: 30px;
+  }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
  
-  <h3>Example 1</h3>
+  <b><h3>Christina Tadros</h3></b>
   <div class="example1">
     <span id="result">&nbsp;</span>
     <div style="background-color:blue;"></div>
-    <div style="background-color:rgb(15,99,30);"></div>
+    <div style="background-color:rgb(75,19,900);"></div>
     <div style="background-color:#123456;"></div>
-    <div style="background-color:#f11;"></div>
-  </div>
+    </div>
+    
 
-  <h3>Example 2</h3>
+    
+    <h3>Example 2</h3> 
+  <div class="example3">
+    <div style="background-color:red;"></div>
+  </div>
+  
+
+  <h3>Example 3</h3>
   <div class="example2">
-    <div style="background-color:purple;"></div>
+    <div style="background-color:yellow;"></div>
   </div>
    
-  <h3>Example 3</h3> 
-  <div class="example3">
+  <h3>Example 4</h3> 
+  <div class="example4">
     <div style="background-color:orange;"></div>
   </div>
    
-  <script>
+   <script>
   /* global $ */
   
   // Example one: get color of box on mouse click
   $( ".example1 div" ).click(function() {
     var color = $( this ).css( "background-color" );
-    $( "#result" ).html( "That div is <span style='color:" +
-      color + ";'>" + color + "</span>." );
+    $( "#result" ).html( "These circles are different shades of blue." );
   });
   
   // Example two: set color of box to random on mouseover
@@ -62,10 +74,16 @@
     return "rgb(" + random0to255() + "," + random0to255() + "," + random0to255() + ")";
   }
   
-  // Example three: add/remove a class to change style of div
-  $( ".example3 div" ).mouseover(function() {
-    $( this ).toggleClass( "rounded" );
+  
+  // Example three: prepend on click
+  $( ".example3 div" ).click(function() {
+    $( this ).prepend( "<img src='https://farm3.staticflickr.com/2927/14216353324_89968a9ec0_o.jpg'>" );
   });
+  
+ // Example four: change shape on click
+ $( ".example4 div" ).click(function()) {
+   $( this ).prepend()
+ }
   </script>
    
 </body>
