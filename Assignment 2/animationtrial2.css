@@ -1,7 +1,7 @@
 .clock {
-    width: 200px;
+    width:200px;
     height: 200px;
-    position: relative;
+    position: absolute;
     animation-name: myclock;
     animation-duration: 10s;
     animation-timing-function: linear;
@@ -9,7 +9,7 @@
 }
 
 .seconds {
-    width: 300px;
+    width: 200px;
     height: 30px;
     background-color: black;
     position: absolute;
