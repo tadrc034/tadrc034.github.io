@@ -9,8 +9,8 @@
 }
 
 .seconds {
-    width: 200px;
-    height: 4px;
+    width: 300px;
+    height: 30px;
     background-color: black;
     position: absolute;
     top: 98px;
@@ -32,10 +32,8 @@
     height: 200px;
     line-height: 200px;
     color: red;
-    border-radius: 100%;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
+    font-family: optima;
+    font-size: 30px;
     text-align: center;
     animation-name: bubble1;
     animation-duration: 2s;
@@ -44,15 +42,14 @@
 }
 
 .button2 {
-    background-color: blue;
+    background-color: red;
     width: 200px;
     height: 200px;
     line-height: 200px;
     color: red;
-    border-radius: 100%;
-    font-family: Arial, sans-serif;
+    font-family: optima;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
     text-align: center;
     animation-name: bubble2;
     animation-duration: 2s;
@@ -62,7 +59,7 @@
 @keyframes bubble1 {
     from {
         background-color: blue;
-        width: 200px;
+        width: 500px;
         height: 200px;
         line-height: 200px;
         color: red;
@@ -70,7 +67,7 @@
     to {
         background-color: red;
         width: 300px;
-        height: 300px;
+        height: 200px;
         line-height: 300px;
         color: white;
     }
