@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Counting Dots</title>
+		<style>
+			body {
+				font-size: 20px;
+			}
+			.dot {
+			    width: 50px;
+			    height: 100px;
+			    background-color: orange;
+			    display: inline-block;
+			    margin: 20px;
+
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<script>
+
+			for (var i = 0; i <= 8; i++) {
+				$("body").append("<div class='dot'></div>");
+			}
+			// Fill each dot with a random integer < 50
+		    $(".dot").each(function() {
+			    $(this).html(Math.floor(Math.random()*19384)+1);
+			});
+			
+			// Every time you click, add 1 to the count, and toggle the appearance.
+			$(".dot").click(function() {
+			    if($(this).hasClass("greencircle")) {
+			        $(this).removeClass("greencircle");
+			    } else {
+			        $(this).addClass("greencircle");
+			    }
+			    var count = $(this).html();
+			    count++;
+			    $(this).html(count);
+			});
+			$(".dot").hover(function() {
+			    if($(this).hasClass("greencircle") || $(this).hasClass("dot") ) {
+			        $(this).toggleClass("pinksquare");
+			    }
+			    var count = $(this).html();
+			    count++;
+			    $(this).html(count);
+			});
+			
+		</script>
+	</body>
+</html>
