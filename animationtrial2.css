@@ -3,9 +3,10 @@
     height: 200px;
     position: absolute;
     animation-name: myclock;
-    animation-duration: 10s;
+    animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    position: bottom;
 }
 
 .seconds {
