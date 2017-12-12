@@ -5,6 +5,7 @@ body{
 .wrapper{
     width: 100%;
     padding: 30px;
+    opacity: 30%;
 }
 .circle{
     width: 300px;
@@ -15,12 +16,14 @@ body{
     color: white;
     cursor: pointer;
     transition: background 1s, transform 2.7s 0.7s ease;
+    opacity: 30%;
     
 }
 
 .circle:hover{
     background: blue;
     transform: rotate(260deg);
+    opacity: 30%;
     
 }
 .circle:active {
