@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <title>War Clock</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <style>
+        .countup{
+           @import url('https://fonts.googleapis.com/css?family=Catamaran');
+            font-family: 'Catamaran', sans-serif;
+            font-size: 120px;
+            font-style: bold;
+            position: absolute;
+            bottom: 200px;
+            left: 390px;
+            color: white;
+            display: flex;
+        }
+        .subtitle{
+            @import url('https://fonts.googleapis.com/css?family=Catamaran');;
+            font-family: 'Catamaran', sans-serif;
+            font-style: thin;
+            font-size: 40px;
+            position: absolute;
+            bottom: 455px;
+            left: 560px;
+            color: white;
+        }
+        .YRSsubtitle{
+            @import url('https://fonts.googleapis.com/css?family=Catamaran');;
+            font-family: 'Catamaran', sans-serif;
+            font-size: 25px;
+            position: absolute;
+            bottom: 290px;
+            left: 405px;
+            color: white;
+        }
+           .HRSsubtitle{
+            @import url('https://fonts.googleapis.com/css?family=Catamaran');;
+            font-family: 'Catamaran', sans-serif;
+            font-size: 25px;
+            position: absolute;
+            bottom: 290px;
+            right: 873px;
+            color: white;
+        }
+           .DAYSsubtitle{
+            @import url('https://fonts.googleapis.com/css?family=Catamaran');;
+            font-family: 'Catamaran', sans-serif;
+            font-size: 25px;
+            position: absolute;
+            bottom: 290px;
+            right: 682.5px;
+            color: white;
+        }
+           .MNSsubtitle{
+            @import url('https://fonts.googleapis.com/css?family=Catamaran');;
+            font-family: 'Catamaran', sans-serif;
+            font-size: 25px;
+            position: absolute;
+            bottom: 290px;
+            right: 510px;
+            color: white;
+        }
+           .SECsubtitle{
+            @import url('https://fonts.googleapis.com/css?family=Catamaran');;
+            font-family: 'Catamaran', sans-serif;
+            font-size: 25px;
+            position: absolute;
+            bottom: 290px;
+            right: 340px;
+            color: white;
+        }
+        .toptitle{
+           @import url('https://fonts.googleapis.com/css?family=Catamaran');
+            font-family: 'Catamaran', sans-serif;
+            font-size: 20px;
+            position: absolute;
+            bottom: 665px;
+            right: 220px;
+            color: white;
+        }
+
+        .photo-background{
+           position: fixed;
+           right: 0;
+           bottom: 0;
+           min-width: 100%; 
+           min-height: 100%;
+        }
+        .line {
+        height: 50px;
+        width: 2px;
+        background-color: white;
+        bottom: 650px;
+        right: 200px;
+        position: absolute;
+}
+        .source{
+            @import url('https://fonts.googleapis.com/css?family=Catamaran');
+            font-family: 'Catamaran', sans-serif;
+            font-style: italic;
+            font-size: 20px;
+            color: white;
+            bottom: 30px;
+            left: 142px;
+            position: absolute;
+}
+        .logo{
+            position: absolute;
+            bottom: 641px;
+            right: 80px;
+        }
+        
+    </style>
+    
+  
+    <body>
+        <div class= "photo-background"><img src="https://cryptome.org/2014-info/syria/pict39.jpg"</div>
+        <div class= "line"></div>		
+<div class="countup">
+  <p id="years">00</p>
+  <p class="timeRefYears"> : </p>
+  <p id="days">00</p>
+  <p class="timeRefDays"> : </p>
+  <p id="hours">00</p>
+  <p class="timeRefHours"> : </p>
+  <p id="minutes">00</p>
+  <p class="timeRefMinutes"> : </p>
+  <p id="seconds">00</p>
+  <p class="timeRefSeconds"></p>
+</div>
+        <div class= "toptitle"> Syrian Civil War </div>
+        <div class= "subtitle">The war has lasted for </div>
+        <div class= "belowsubtitle"></div>
+        <div class="source"> Source</div>
+        <div class= "logo"> <img width="100px" height: "200px" src='logo new.png' > </div>
+        <div class= "YRSsubtitle"> YRS</div>
+        <div class= "HRSsubtitle"> DAYS</div>
+        <div class= "DAYSsubtitle">HRS</div>
+        <div class= "MNSsubtitle"> MINS</div>
+        <div class= "SECsubtitle"> SECS</div>
+      
+    </body>
+    
+<script>
+window.onload=function() {
+  // Month,Day,Year,Hour,Minute,Second
+  upTime('mar,15,2011,00:00:00'); // ****** Change this line!
+};
+function upTime(countTo) {
+  now = new Date();
+  countTo = new Date(countTo);
+  difference = (now-countTo);
+  days=Math.floor(difference/(60*60*1000*24)*1);
+  years = Math.floor(days / 365);
+  if (years > 1){ days = days - (years * 365)}
+  hours=Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1);
+  mins=Math.floor(((difference%(60*60*1000*24))%(60*60*1000))/(60*1000)*1);
+  secs=Math.floor((((difference%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1);
+  document.getElementById('years').firstChild.nodeValue = years;
+  document.getElementById('days').firstChild.nodeValue = days;
+  document.getElementById('hours').firstChild.nodeValue = hours;
+  document.getElementById('minutes').firstChild.nodeValue = mins;
+  document.getElementById('seconds').firstChild.nodeValue = secs;
+
+  clearTimeout(upTime.to);
+  upTime.to=setTimeout(function(){ upTime(countTo); },1000);
+}
+    
+</script>
+
+<html>

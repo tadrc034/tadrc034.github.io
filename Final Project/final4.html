@@ -1,0 +1,191 @@
+<html>
+    <head>
+        <title>Before and After</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script
+        <link href="final4.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <style>
+        .title{
+           @import url('https://fonts.googleapis.com/css?family=Catamaran');
+            font-family: 'Catamaran', sans-serif;
+            font-size: 90px;
+            position: absolute;
+            bottom: 365px;
+            left: 250px;
+            color: white;
+        }
+        .subtitle{
+            @import url('https://fonts.googleapis.com/css?family=Catamaran');;
+            font-family: 'Catamaran', sans-serif;
+            font-size: 40px;
+            position: absolute;
+            bottom: 330px;
+            left: 410px;
+            color: white;
+        }
+        .toptitle{
+           @import url('https://fonts.googleapis.com/css?family=Catamaran');
+            font-family: 'Catamaran', sans-serif;
+            font-size: 20px;
+            position: fixed;
+            top: 59px;
+            right: 220px;
+            color: white;
+        }
+        .line {
+        height: 50px;
+        width:2px;
+        background-color: white;
+        top: 45px;
+        right: 200px;
+        position: fixed;
+}
+        .source{
+            @import url('https://fonts.googleapis.com/css?family=Catamaran');
+            font-family: 'Catamaran', sans-serif;
+            font-style: italic;
+            font-size: 20px;
+            color: white;
+            bottom: 30px;
+            left: 60px;
+            position: absolute;
+}
+        .logo{
+            position: fixed;
+            top: 35px;
+            right: 80px;
+        }
+       
+        @import "compass/css3";
+
+        .before_after_slider {
+          position: relative;
+          margin: 60px;
+          width: 640px;
+          height: 400px;
+          & > * {
+            position: absolute;
+          }
+
+        .black_white {
+          overflow: hidden;
+        }
+        
+        .1A
+        
+    {
+        
+    }
+        .1B{
+            
+        }
+                
+    </style>
+    
+  
+    <body>
+        <div class= "line"></div>		
+        <div class= "title">Before and After.</div>
+        <div class= "toptitle">Syrian Civil War</div>
+        <div class= "subtitle">Drag the line.</div>
+        <div class="source"> Source</div>
+        <div class= "logo"> <img width="100px" height: "200px" src='logo new.png' > </div>
+        <div class= "before"> <img width="100px" height: "200px" src='logo new.png' > </div>
+        <div class= "before"> <img width="100px" height: "200px" src='logo new.png' > </div>
+
+         <div class="slider responsive">
+          <div class="left image">
+            <img src= "before.jpg"/>
+          </div>
+          <div class="right image">
+            <img src="after.jpg"/>
+          </div>
+        </div>
+      
+<script>
+    (function ($) {
+	'use strict';
+	$.fn.slider = function (options) {
+
+	//default options
+	var settings = $.extend($.fn.slider.defaultOptions, options);
+
+	var init = function () {
+		var $this = $(this);
+		var width = $this.width();
+		$this.find('.image img').css('width' , width + 'px');
+		$this.find('.left.image').css('width' , Math.floor(width * settings.initialPosition));
+		if (settings.showInstruction) {
+			// Check if instruction div exists before adding
+			var $instrDiv = null;
+			$instrDiv = $('div.instruction');
+
+			if ($instrDiv.length === 0) {
+				$instrDiv = $('<div></div>')
+					.addClass('instruction')
+					.append('<p></p>');
+				$this.append($instrDiv);
+			}
+
+			$instrDiv.children('p')
+				.text(settings.instructionText);
+
+			//set left offset of instruction
+			$instrDiv.css('left', (settings.initialPosition - $instrDiv.children('p').width() / (2 * width)) * 100 + '%');
+		}
+	};
+
+	var slideResize = function (e) {
+		e.preventDefault();
+		//hide instructions
+		$(e.currentTarget).children('.instruction').hide();
+		var width;
+		if(e.type.startsWith('touch')){
+			width = e.originalEvent.touches[0].clientX - e.originalEvent.layerX;
+		} else {
+			width = e.offsetX === undefined ? e.pageX - e.originalEvent.layerX : e.offsetX;
+		}
+		if (width<=$(this).width()){
+			$(this).find('.left.image').css('width', width + 'px');
+		}
+	};
+
+	var enableSliderDrag = function (e) {
+		e.preventDefault();
+		$(this).css('cursor' , 'ew-resize')
+			.on('mousemove.sliderns', slideResize)
+			.on('touchmove.sliderns', slideResize);
+	};
+
+	var disableSliderDrag = function (e) {
+		e.preventDefault();
+		$(this).css('cursor', 'normal')
+			.off('mousemove.sliderns')
+			.off('touchmove.sliderns');
+	};
+
+	var redrawSlider = function () {
+		return $('.slider.responsive').each(init);
+	};
+
+	$(window).on('resize', redrawSlider);
+	return this.each(init)
+		.on('click touchstart', slideResize)
+		.on('mousedown touchstart', enableSliderDrag)
+		.on('mouseup touchend', disableSliderDrag);
+	};
+
+	$.fn.slider.defaultOptions= {
+			initialPosition: 0.5,
+			showInstruction: true,
+			instructionText: 'Click and Drag'
+	};
+
+}(jQuery));
+
+</script>
+    </body>
+    
+
+<html>
