@@ -2,27 +2,47 @@
 	<head>
 		<title>Counting Dots</title>
 		<style>
-			body {
+		
+			.body {
 				font-size: 20px;
+				text-align: center;
+				background: orange;
 			}
 			.dot {
 			    width: 50px;
-			    height: 100px;
-			    background-color: orange;
+			    height: 190px;
+			    background-color: pink;
 			    display: inline-block;
+			    border-radius: 20%;
 			    margin: 20px;
-
+			}
+				.greencircle {
+			    background-color: pink;
+			    width: 70px;
+			    height: 90px;
+			    display: inline-block;
+			    border: 30px solid yellow;
+			    border-radius: 100%;
+			}
+				.pinksquare{
+					background-color: blue;
+			    width: 70px;
+			    height: 90px;
+			    display: inline-block;
+			    border: 30px solid yellow;
+			    border-radius: 100%;
+				}
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<script>
 
-			for (var i = 0; i <= 8; i++) {
+			for (var i = 0; i <= 90; i++) {
 				$("body").append("<div class='dot'></div>");
 			}
 			// Fill each dot with a random integer < 50
-		    $(".dot").each(function() {
+		    $("49").each(function() {
 			    $(this).html(Math.floor(Math.random()*19384)+1);
 			});
 			
@@ -31,7 +51,7 @@
 			    if($(this).hasClass("greencircle")) {
 			        $(this).removeClass("greencircle");
 			    } else {
-			        $(this).addClass("greencircle");
+			        $(this).addClass("dot");
 			    }
 			    var count = $(this).html();
 			    count++;

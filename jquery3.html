@@ -1,75 +1,126 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
-    <title>Test</title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(window).unload(saveSettings);
-            loadSettings();
-        });
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>contact me please through:</title>
 
-        function loadSettings() {
-            $('#Name').val(localStorage.Name); <br>
-            $('#Weight').val(localStorage.weight); <br>
-            $('#DateofBirth').val(localStorage.DateofBirth);<br>
-            $('input[type=radio]:checked').val(localStorage.gender);<br>
-            $("#sportive").find("option[value=" + localStorage.sportive + "]").attr("selected", "selected"); <br>
-        }
+    <!-- include Bootstrap CSS for layout -->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="container">
+      <h1>Contact me please through:</h1>
+      
+      <form method="post" class="form-horizontal">
+        <fieldset>
+          <legend><em>Kim possible</em> </legend>  
 
-        function saveSettings() {
-            var Name = document.getElementById("Name").value;
-            var Weight = document.getElementById("weight").value;
-            var sportive = document.getElementById("sportive").value;
-            var Gender = $('input[type=radio]:checked').val();
-            var DateofBirth = document.getElementById("DateofBirth").val();
-
-            localStorage.Name = Name;
-            localStorage.weight = Weight;
-            localStorage.DateofBirth                                                                                                                                                                                                                                                                                                               = DateofBirth;
-            localStorage.sportive = sportive;
-            localStorage.gender = Gender;
-        }
-
-
-    </script>
-</head>
-<body>
-    <div data-role="content">
-
-        <form id="myForm" >
-
-            gender:
-
-            <input id="Male" type="radio" name="gender" value="Male" >
-            <label for="Male">Man</label>
-
-            <input id="Female" type="radio" name="gender" value="Female">
-            <label for="Female" >Female</label>
-
-            dateOfBirth:
-            <input type="date" id="Date of Birth" name="Date of Birth" required />
-
-            weight (in kg):
-            <input type="number" id="weight" name="weight" required />
-
-            Name:
-            <input type="text" id="Name" name="Name" required />
-
-            Hoeveel keer doe je aan sport per week?
-            <select id="sportive" name="sport">
-                <option value="1.2" >Weinig of geen training, kantoorwerk</option>
-                <option value="1.375">Lichte training/sport 1-3 dagen per week</option>
-                <option value="1.55" >Gemiddelde training/sport 3-5 dagen per week</option>
-                <option value="1.725" >Zware training/sport 6-7 dagen per week</option>
-                <option value="1.9" >Zware dagelijkse training/sport plus lichamelijk werk</option>
-            </select>
-
-            <br />
-
-        </form>
-
+          <div class="control-group">
+            <label class="control-label" for="type">Whats ur question</label>
+            <div class="controls">
+              <select name="type" id="type">
+                <option value="">Please select</option>
+                <option value="general">call me</option>
+                <option value="sales">beat me</option>
+                <option value="support">if you wanna reach me</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="control-group">
+            <label class="control-label" for="name">Name</label>
+            <div class="controls">
+              <input class="input-xlarge" type="text" name="name" id="name" value="" maxlength="50">
+            </div>
+          </div>
+    
+          <div class="control-group">
+            <label class="control-label" for="email">Email Address</label>
+            <div class="controls">
+              <input class="input-xlarge" type="text" name="email" id="email" value="" maxlength="150">
+            </div>
+          </div>
+        
+          <div class="control-group">
+            <label class="control-label" for="message">Message</label>
+            <div class="controls">
+              <textarea class="input-xlarge" name="message" id="message"></textarea>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox">
+                <input name="subscribe" id="subscribe" type="checkbox">
+                hit me up
+              </label>
+            </div>
+          </div>          
+        </fieldset>                        
+        
+        <div class="form-actions">
+          <input type="submit" name="submit" id="submit" value="Send" class="btn btn-primary">
+        </div>
+      </form>  
     </div>
-</body>
+    
+    <!-- include jQuery library -->
+    <script src="//code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function () {
+      /*
+       * check browser supports local storage
+       */
+      if (localStorage) {
+        /*
+         * if form field values exist in local storage use
+         * them to populate the form when the page loads
+         */
+        if (localStorage.type) {
+          $("#type").find("option[value=" + localStorage.type + "]").attr("selected", true);
+        }
+        if (localStorage.name) {
+          $("#name").val(localStorage.name);
+        }
+        if (localStorage.email) {
+          $("#email").val(localStorage.email);
+        }
+        if (localStorage.message) {
+          $("#message").val(localStorage.message);
+        }
+        if (localStorage.subscribe === "checked") {
+          $("#subscribe").attr("checked", "checked");
+        }
+        
+        /*
+         * when a form field changes store it's value in local storage
+         */
+        $("input[type=text],select,textarea").change(function(){
+          $this = $(this);
+          localStorage[$this.attr("name")] = $this.val();
+        });
+        $("input[type=checkbox]").change(function(){
+          $this = $(this);
+          localStorage[$this.attr("name")] = $this.attr("checked");
+        });
+        
+        $("form")
+          /*
+           * clear local storage when the form is submitted
+           */
+          .submit(function(){
+            localStorage.clear();
+          })
+          /* 
+           * output local storage to the console each time the form changes
+           * (you may want to remove this code on the production server)
+           */
+          .change(function(){
+            console.log(localStorage);
+          });
+      }
+    });
+    </script>
+  </body>
+</html>

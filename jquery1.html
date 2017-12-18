@@ -1,86 +1,93 @@
 <html>
 <head>
-  <title>jQuery Demo</title>
-  <style>
-  div {
-    width: 90px;
-    height: 90px;
-    border-radius: 80px;
-    margin: 5px;
-    float: left;
-  }
-  .example1, .example2, .example3, .example4 {
-     width: 100%; 
-     margin-bottom: 40px;
-  } b  
-  .rounded {
-    border-radius: 60px;
-  }
-  
-  body{
-    font-family: helvetica;
-    font-size: 30px;
-  }
+  <title>jQuery</title>
+  <style type="text/css">
+      .body{
+          font: impact;
+          font-size: 26px;
+      }
   </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<body>
+  <head>
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("ol").append("<li>orange<a href='javascript:void(0);' class='remove'>&times;</a></li>"); 
+            $("ol").append("<li>cucumber<a href='javascript:void(0);' class='remove'>&times;</a></li>"); 
+            $("ol").append("<li>pepper<a href='javascript:void(0);' class='remove'>&times;</a></li>"); 
+            $("ol").append("<li>honey<a href='javascript:void(0);' class='remove'>&times;</a></li>"); 
+            $("ol").append("<li>ginger<a href='javascript:void(0);' class='remove'>&times;</a></li>"); 
+        });
+        $(document).on("click", "a.remove" , function() {
+            $(this).parent().remove();
+        });
+    });
+</script>
+  </head>
+  <style>
+      .img{
+          width: 100px;
+      }
+  </style>
+  <body>
+   <img id="hover" src="123.jpg" onmouseover="randomHover();" onmouseout="resetState();">
+  <br>
+  <br> <br>
+  <br> <br>
+  <br> <br>
+  <br> <br>
+  <br> <br>
+  <br> <br>
+  <br> <br>
+  <br> <br>
+  <br> <br>
  
-  <b><h3>Christina Tadros</h3></b>
-  <div class="example1">
-    <span id="result">&nbsp;</span>
-    <div style="background-color:blue;"></div>
-    <div style="background-color:rgb(75,19,900);"></div>
-    <div style="background-color:#123456;"></div>
-    </div>
-    
+  <br>
+  hover over image!<br>
+  <button>Add new list item</button>
+    <p>Click the above button to complete your grocery list</p>
+    <ol>
+        <li>avocado</li>
+        <li>lemon</li>
+        <li>pineapple</li>
+        <li>banana</li>
+    </ol>
+  </body>
+<script>
+    function randomPick(arr) {
 
-    
-    <h3>Example 2</h3> 
-  <div class="example3">
-    <div style="background-color:red;"></div>
-  </div>
+  var selected = arr[Math.floor(Math.random()*arr.length)]
+
+  return selected;
+}
+
+
+images = 
+[ 
+
+"1234.jpg",
+"12345.jpg",
+"123456.jpg",
+"1234567.jpg",
+"12345678.jpg"
+]
+
+
+
+function randomHover () {
+
+  var myImage = document.getElementById('hover');
+  var selImage = randomPick(images);
+
+  myImage.src = selImage;
   
 
-  <h3>Example 3</h3>
-  <div class="example2">
-    <div style="background-color:yellow;"></div>
-  </div>
-   
-  <h3>Example 4</h3> 
-  <div class="example4">
-    <div style="background-color:orange;"></div>
-  </div>
-   
-   <script>
-  /* global $ */
-  
-  // Example one: get color of box on mouse click
-  $( ".example1 div" ).click(function() {
-    var color = $( this ).css( "background-color" );
-    $( "#result" ).html( "These circles are different shades of blue." );
-  });
-  
-  // Example two: set color of box to random on mouseover
-  $( ".example2 div" ).mouseover(function() {
-    $( this ).css( "background-color", getRandomColor());
-  });
-  
-  function getRandomColor () {
-    // this function returns a string with format "rgb(000,000,000)" where 000 is an integer between 0 and 255
-    var random0to255 = function() {
-      return Math.floor(Math.random()*255);
-    }
-    return "rgb(" + random0to255() + "," + random0to255() + "," + random0to255() + ")";
-  }
-    
-  
-  // Example three: prepend on click
-  $( ".example3 div" ).click(function() {
-    $( this ).prepend( "<img src='https://farm3.staticflickr.com/2927/14216353324_89968a9ec0_o.jpg'>" );
-  });
-  
-  </script>
-   
-</body>
-</html>
+}
+
+function resetState() {
+
+  var myImage = document.getElementById('hover');
+  myImage.src = "123.jpg";
+
+}
+</script>
